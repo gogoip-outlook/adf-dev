@@ -1,0 +1,43 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "Fail1",
+				"type": "Fail",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"message": "It failed Thanks",
+					"errorCode": "111"
+				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "VAR_01",
+					"value": "Praneshwara01"
+				}
+			}
+		],
+		"variables": {
+			"VAR_01": {
+				"type": "String",
+				"defaultValue": "Praneshwara"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-06-17T11:38:34Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

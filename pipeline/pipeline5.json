@@ -1,0 +1,71 @@
+{
+	"name": "pipeline5",
+	"properties": {
+		"activities": [
+			{
+				"name": "Switch1",
+				"type": "Switch",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"on": {
+						"value": "pratim",
+						"type": "Expression"
+					},
+					"cases": [
+						{
+							"value": "pran",
+							"activities": [
+								{
+									"name": "Set variable1",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "outvar",
+										"value": "'pran'"
+									}
+								}
+							]
+						},
+						{
+							"value": "pratim",
+							"activities": [
+								{
+									"name": "Set variable3",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "outvar",
+										"value": "'pratim'"
+									}
+								}
+							]
+						}
+					],
+					"defaultActivities": [
+						{
+							"name": "Set variable2",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "outvar",
+								"value": "'default'"
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"outvar": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-06-18T19:31:33Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

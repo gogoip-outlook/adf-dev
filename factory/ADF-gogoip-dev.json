@@ -1,0 +1,9 @@
+{
+	"name": "ADF-gogoip-dev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cdcbcb1f-dca7-4bb5-88d8-77229b764702",
+		"tenantId": "4010b9ed-144a-462c-a3ab-a9bde7b38496"
+	}
+}
