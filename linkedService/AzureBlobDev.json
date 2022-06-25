@@ -1,0 +1,12 @@
+{
+	"name": "AzureBlobDev",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=stagogoipdev;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDZCODZDNTFDLTI5MzMtNDdENi1COEFBLUE2RDA5QUNGODVFOV80MzE0ZmU5YS01NTlmLTQzZTgtYjBjNS05ODk2ZDI0MDE1OWIiDQp9"
+		}
+	}
+}
