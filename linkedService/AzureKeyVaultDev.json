@@ -1,0 +1,10 @@
+{
+	"name": "AzureKeyVaultDev",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-gogoip-dev.vault.azure.net/"
+		}
+	}
+}
