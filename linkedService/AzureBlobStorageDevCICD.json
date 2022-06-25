@@ -1,0 +1,17 @@
+{
+	"name": "AzureBlobStorageDevCICD",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVaultDev",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sec-sta-gogoip-dev"
+			}
+		}
+	}
+}
