@@ -22,6 +22,10 @@
 		"AzureKeyVaultDev_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://kv-gogoip-dev.vault.azure.net/"
+		},
+		"trigger1_properties_pipeline_parameters_trigger_st_time": {
+			"type": "string",
+			"defaultValue": "@trigger.outputs.windowStartTIme"
 		}
 	},
 	"variables": {
@@ -499,6 +503,10 @@
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
 									"recursive": true,
+									"modifiedDatetimeStart": {
+										"value": "@pipeline().parameters.trigger_st_time",
+										"type": "Expression"
+									},
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -545,6 +553,11 @@
 				"policy": {
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
+				},
+				"parameters": {
+					"trigger_st_time": {
+						"type": "string"
+					}
 				},
 				"annotations": []
 			},
@@ -1007,20 +1020,44 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipeline": {
-					"pipelineReference": {
-						"referenceName": "pipeline_cicd_test",
-						"type": "PipelineReference"
-					},
-					"parameters": {}
-				},
+				"runtimeState": "Stopped",
 				"type": "TumblingWindowTrigger",
 				"typeProperties": {
 					"frequency": "Hour",
 					"interval": 6,
 					"startTime": "2022-06-28T00:41:00Z",
 					"endTime": "2022-06-30T14:41:00Z",
+					"delay": "00:00:00",
+					"maxConcurrency": 50,
+					"retryPolicy": {
+						"intervalInSeconds": 30
+					},
+					"dependsOn": []
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipeline": {
+					"pipelineReference": {
+						"referenceName": "pipeline_cicd_test",
+						"type": "PipelineReference"
+					},
+					"parameters": {
+						"trigger_st_time": "[parameters('trigger1_properties_pipeline_parameters_trigger_st_time')]"
+					}
+				},
+				"type": "TumblingWindowTrigger",
+				"typeProperties": {
+					"frequency": "Minute",
+					"interval": 15,
+					"startTime": "2022-06-29T14:46:00Z",
 					"delay": "00:00:00",
 					"maxConcurrency": 50,
 					"retryPolicy": {

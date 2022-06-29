@@ -16,6 +16,9 @@
 		},
 		"AzureKeyVaultDev_properties_typeProperties_baseUrl": {
 			"value": "https://kv-gogoip-dev.vault.azure.net/"
+		},
+		"trigger1_properties_pipeline_parameters_trigger_st_time": {
+			"value": "@trigger.outputs.windowStartTIme"
 		}
 	}
 }

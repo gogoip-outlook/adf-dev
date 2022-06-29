@@ -23,6 +23,10 @@
 			"type": "string",
 			"defaultValue": "https://kv-gogoip-dev.vault.azure.net/"
 		},
+		"trigger1_properties_pipeline_parameters_trigger_st_time": {
+			"type": "string",
+			"defaultValue": "@trigger.outputs.windowStartTIme"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -79,6 +83,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"trigger1_properties_pipeline_parameters_trigger_st_time": {
+						"value": "[parameters('trigger1_properties_pipeline_parameters_trigger_st_time')]"
 					}
 				}
 			},
