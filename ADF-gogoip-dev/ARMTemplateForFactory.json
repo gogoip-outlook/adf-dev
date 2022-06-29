@@ -933,13 +933,6 @@
 			"properties": {
 				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipeline": {
-					"pipelineReference": {
-						"referenceName": "pipeline_cicd_test",
-						"type": "PipelineReference"
-					},
-					"parameters": {}
-				},
 				"type": "TumblingWindowTrigger",
 				"typeProperties": {
 					"frequency": "Hour",
@@ -954,9 +947,7 @@
 					"dependsOn": []
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/pipeline_cicd_test')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/trigger_tumbling_weekly')]",
@@ -987,6 +978,44 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/pipeline6')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger_past')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pipeline_cicd_test",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2022-06-01T00:17:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								0
+							],
+							"hours": [
+								10
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pipeline_cicd_test')]"
 			]
 		}
 	]
