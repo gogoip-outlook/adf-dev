@@ -7,6 +7,9 @@
 			"pipelineReference": {
 				"referenceName": "pipeline_cicd_test",
 				"type": "PipelineReference"
+			},
+			"parameters": {
+				"trigger_st_time": "@trigger.outputs.windowEndTime"
 			}
 		},
 		"type": "TumblingWindowTrigger",
