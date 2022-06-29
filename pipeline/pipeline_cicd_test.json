@@ -20,6 +20,10 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
+							"modifiedDatetimeStart": {
+								"value": "@pipeline().parameters.trigger_st_time",
+								"type": "Expression"
+							},
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -61,6 +65,11 @@
 				]
 			}
 		],
+		"parameters": {
+			"trigger_st_time": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
