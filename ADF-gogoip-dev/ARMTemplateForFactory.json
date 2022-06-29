@@ -999,18 +999,11 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Day",
+						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2022-06-01T00:17:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								0
-							],
-							"hours": [
-								10
-							]
-						}
+						"startTime": "2022-06-28T00:17:00Z",
+						"endTime": "2022-06-30T14:34:58Z",
+						"timeZone": "UTC"
 					}
 				}
 			},
