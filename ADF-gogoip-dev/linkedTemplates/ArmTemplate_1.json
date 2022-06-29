@@ -13,16 +13,16 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger_schedule_every_minute')]",
+			"name": "[concat(parameters('factoryName'), '/trigger_schedule')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Stopped",
+				"runtimeState": "Started",
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "pipeline_cicd_test",
+							"referenceName": "pipeline6",
 							"type": "PipelineReference"
 						},
 						"parameters": {}
@@ -31,9 +31,9 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
+						"frequency": "Hour",
 						"interval": 1,
-						"startTime": "2022-06-29T10:12:00Z",
+						"startTime": "2022-06-29T09:52:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -59,6 +59,7 @@
 					"frequency": "Hour",
 					"interval": 4,
 					"startTime": "2022-06-29T10:21:00Z",
+					"endTime": "2022-07-07T00:39:47Z",
 					"delay": "00:00:00",
 					"maxConcurrency": 50,
 					"retryPolicy": {
