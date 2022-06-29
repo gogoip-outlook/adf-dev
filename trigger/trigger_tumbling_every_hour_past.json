@@ -2,7 +2,7 @@
 	"name": "trigger_tumbling_every_hour_past",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipeline": {
 			"pipelineReference": {
 				"referenceName": "pipeline_cicd_test",
