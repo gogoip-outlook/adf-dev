@@ -1,5 +1,5 @@
 {
-	"name": "trigger1",
+	"name": "trigger_schedule_every_minute",
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Stopped",
