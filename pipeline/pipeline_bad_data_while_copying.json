@@ -65,13 +65,13 @@
 							{
 								"source": {
 									"name": "id",
-									"type": "Decimal",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "id",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "String",
+									"ordinal": 1
 								}
 							},
 							{
@@ -81,9 +81,9 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "name",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "String",
+									"ordinal": 2
 								}
 							},
 							{
@@ -93,21 +93,21 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "location",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "String",
+									"ordinal": 3
 								}
 							},
 							{
 								"source": {
 									"name": "startdate",
-									"type": "DateTime",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "startdate",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "String",
+									"ordinal": 4
 								}
 							}
 						],
@@ -126,7 +126,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "emp_tgt_with_schema",
+						"referenceName": "emp_tgt",
 						"type": "DatasetReference"
 					}
 				]
