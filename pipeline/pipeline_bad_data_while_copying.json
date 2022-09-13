@@ -45,6 +45,7 @@
 							"type": "LinkedServiceReference"
 						}
 					},
+					"parallelCopies": 2,
 					"enableSkipIncompatibleRow": false,
 					"logSettings": {
 						"enableCopyActivityLog": true,
