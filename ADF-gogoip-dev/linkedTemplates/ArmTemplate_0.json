@@ -18,10 +18,6 @@
 		"AzureKeyVaultDev_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://kv-gogoip-dev.vault.azure.net/"
-		},
-		"AzureBlobStorageDevCICD_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "sec-sta-gogoip-dev"
 		}
 	},
 	"variables": {
@@ -487,6 +483,30 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Parquet_nested_json')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobDev",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "target"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobDev')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/csv_nested_json')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -661,28 +681,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobDev')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureBlobStorageDevCICD')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "AzureKeyVaultDev",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "[parameters('AzureBlobStorageDevCICD_properties_typeProperties_connectionString_secretName')]"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureKeyVaultDev')]"
 			]
 		}
 	]
