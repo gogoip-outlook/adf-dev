@@ -38,12 +38,18 @@
 							"fileExtension": ".txt"
 						}
 					},
-					"enableStaging": false,
-					"enableSkipIncompatibleRow": true,
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobDev",
+							"type": "LinkedServiceReference"
+						}
+					},
+					"enableSkipIncompatibleRow": false,
 					"logSettings": {
 						"enableCopyActivityLog": true,
 						"copyActivityLogSettings": {
-							"logLevel": "Warning",
+							"logLevel": "Info",
 							"enableReliableLogging": false
 						},
 						"logLocationSettings": {
