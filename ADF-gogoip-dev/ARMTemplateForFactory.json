@@ -548,7 +548,7 @@
 									{
 										"source": {
 											"name": "id",
-											"type": "String",
+											"type": "Int16",
 											"physicalType": "String"
 										},
 										"sink": {
