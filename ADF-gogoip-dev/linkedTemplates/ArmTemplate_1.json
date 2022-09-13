@@ -460,7 +460,84 @@
 									"type": "ParquetWriteSettings"
 								}
 							},
-							"enableStaging": false
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['id']"
+										},
+										"sink": {
+											"name": "id",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['type']"
+										},
+										"sink": {
+											"name": "type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['name']"
+										},
+										"sink": {
+											"name": "name",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['ppu']"
+										},
+										"sink": {
+											"name": "ppu",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"path": "$['batters']['batter'][0]['id']"
+										},
+										"sink": {
+											"name": "batters_batter'][0]['id",
+											"type": "Byte"
+										}
+									},
+									{
+										"source": {
+											"path": "$['batters']['batter'][0]['type']"
+										},
+										"sink": {
+											"name": "batters_batter'][0]['type",
+											"type": "Byte[]"
+										}
+									},
+									{
+										"source": {
+											"path": "$['topping'][0]['id']"
+										},
+										"sink": {
+											"name": "topping'][0]['id",
+											"type": "Byte"
+										}
+									},
+									{
+										"source": {
+											"path": "$['topping'][0]['type']"
+										},
+										"sink": {
+											"name": "topping'][0]['type",
+											"type": "Byte[]"
+										}
+									}
+								]
+							}
 						},
 						"inputs": [
 							{
