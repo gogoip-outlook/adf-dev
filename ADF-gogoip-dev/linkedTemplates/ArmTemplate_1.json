@@ -335,7 +335,8 @@
 				"description": "nested_json_to_csv",
 				"activities": [
 					{
-						"name": "Copy data1",
+						"name": "Copy data JSON to CSV",
+						"description": "Nested JSON to CSV",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
