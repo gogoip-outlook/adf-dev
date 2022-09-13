@@ -1,0 +1,21 @@
+{
+	"name": "csv_nested_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobDev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "target"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
