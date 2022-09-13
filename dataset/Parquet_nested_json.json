@@ -1,0 +1,19 @@
+{
+	"name": "Parquet_nested_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobDev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "target"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
