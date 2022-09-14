@@ -529,7 +529,7 @@
 								}
 							},
 							"parallelCopies": 2,
-							"enableSkipIncompatibleRow": false,
+							"enableSkipIncompatibleRow": true,
 							"logSettings": {
 								"enableCopyActivityLog": true,
 								"copyActivityLogSettings": {
@@ -944,7 +944,7 @@
 										},
 										"sink": {
 											"name": "batters_batter'][0]['id",
-											"type": "Byte"
+											"type": "String"
 										}
 									},
 									{
@@ -962,7 +962,7 @@
 										},
 										"sink": {
 											"name": "topping'][0]['id",
-											"type": "Byte"
+											"type": "String"
 										}
 									},
 									{
