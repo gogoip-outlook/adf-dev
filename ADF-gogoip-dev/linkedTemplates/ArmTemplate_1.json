@@ -515,7 +515,7 @@
 										},
 										"sink": {
 											"name": "batters_batter'][0]['type",
-											"type": "Byte[]"
+											"type": "String"
 										}
 									},
 									{
@@ -533,7 +533,7 @@
 										},
 										"sink": {
 											"name": "topping'][0]['type",
-											"type": "Byte[]"
+											"type": "String"
 										}
 									}
 								]
